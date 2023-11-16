@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+{% load static%}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+* {
+  box-sizing: border-box;
+}
+body{
+    /* background-image: url('static/back.png');
+background-color:orchid; */
+background: linear-gradient(to right, #f32170,#ff6b08, #cf23cf, #eedd44)}
+.menu {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+.menu a {
+  background-color: #e5e5e5;
+  padding: 8px;
+  margin-top: 7px;
+  display: block;
+  width: 100%;
+  color: black;
+}
+
+.main {
+  float: left;
+  width: 60%;
+  padding: 0 20px;
+}
+
+.right {
+  background-color: #e5e5e5;
+  float: left;
+  width: 20%;
+  padding: 15px;
+  margin-top: 7px;
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body style="font-family:Verdana;color:#000000;" >
+<div class="container">
+    <form method="post" action="">
+        {% csrf_token%}
+<div style="background-color:#000000;padding:15px;text-align:center;">
+  <h1 style="color:wheat"><b>QR CODE GENERATOR</b></h1>
+
+</div>
+<br/>
+<br/>
+<style>
+    label{
+        display: inline-block;
+        width: 200px;
+        text-align: right;
+        background-color: black;
+        color:wheat;
+        font-size: 15px;
+    }
+</style>
+<div>
+    <center>
+        <label  >Enter the Text/Link:   </label><input class="textbox-5 text-primary" type="text" id="entry" name="data" placeholder="enter text or link">
+    <br/><br/><br/> 
+    <label >Enter Scale:</label><input class="textbox-5 text-primary" type="text" name="scale1" placeholder="enter scale for qr" >
+<br/><br/><br/>
+
+<input type="button" value="Generate QR" id="btn" class="btn btn-success" size="50px">
+
+
+</center>
+</div>
+</form>
+{% if data %}
+<img src="{%static 'static/qr.png' %}" alt='no image'>
+{% else %}
+{% endif %}
+<style>
+.textbox-5 {
+	border: 3px inset #FFA5A5;
+	outline: 0;
+	height: 30px;
+	width: 275px;
+}
+</style>
+<!-- 
+<div style="overflow:auto">
+  <div class="menu">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+    <a href="#">Link 4</a>
+  </div>
+
+  <div class="main">
+    <h2>Lorum Ipsum</h2>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  </div>
+
+  <div class="right">
+    <h2>About</h2>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+  </div>
+</div> -->
+
+<div style="background-color:#000000;text-align:center;padding:10px;margin-top:7px;color: wheat;">© developed by Akash and Team</div>
+</div>
+</body>
+</html>
+

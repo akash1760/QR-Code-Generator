@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static%}
+
+<html lang="en">
+    <head> 
+        <meta charset="UTF-8"> 
+        <title>QR Code Generator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    </head>
+    <style>
+        body{
+            background: linear-gradient(to right, #f32170,#ff6b08, #cf23cf)}
+
+        
+    </style>
+    <body> 
+        <center>
+            
+            <h1 style="font-family:monospace ;text-shadow: black;background-color: rgb(0, 0, 0);color:wheat;"><b>QR CODE GENERATOR</b></h1>
+        </center>
+        <div class="container shadow" style="width: 800px; margin-top: 5em; padding: 2em;background-image: linear-gradient(to right, #cf23cf,#ff6b08,#f32170);"> 
+         
+            <form method="post"> {% csrf_token %}
+                
+                <div class="input-group mb-3"> 
+                    <input type="submit" style="max-width: 200px; margin: auto" class="form-control btn-primary"> 
+                </div> 
+            </form> 
+            <br/><br/>  <br/><br/>  
+           
+        </div>
+       
+        <div style="background-color:#000000;text-align:center;padding:8px;margin-top:7px;color: wheat;">© developed by Team2</div>
+</div>
+    </body>
+    </html>
